@@ -1,10 +1,9 @@
-package com.administra.kforum2020.ui.dashboard;
+package com.administra.kforum2020.ui.agenda;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -14,15 +13,15 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.administra.kforum2020.R;
 
-public class DashboardFragment extends Fragment {
+public class AgendaFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private AgendaViewModel dashboardViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+                ViewModelProviders.of(this).get(AgendaViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_agenda, container, false);
         //final TextView textView = root.findViewById(R.id.text_dashboard);
         dashboardViewModel.getText().observe(this, new Observer<String>() {
             @Override

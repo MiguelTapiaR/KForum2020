@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "962336425254",
+    "firebase_url": "https://kforum2020.firebaseio.com",
+    "project_id": "kforum2020",
+    "storage_bucket": "kforum2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962336425254:android:7d331b5bd3b6298a1d2de7",
+        "android_client_info": {
+          "package_name": "com.administra.kforum2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "962336425254-s328f0sb2mgm0eje09tihdqsnosk4ndp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.administra.kforum2020",
+            "certificate_hash": "fc59fe50bf6da2d7e7ed2d8e7f1129dc1c94c76c"
+          }
+        },
+        {
+          "client_id": "962336425254-8lr2cvpt4oehotvfboc6545158bgvc65.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJBFyD4yH7MlZZwhmy1rljrVypIBDlgSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "962336425254-8lr2cvpt4oehotvfboc6545158bgvc65.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "962336425254-14f60d0c2m14kf4g94ljjrvgivod83uo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.administra.kforum2020"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
