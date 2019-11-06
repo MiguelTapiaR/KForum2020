@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/navigation_menu"
-        android:name="com.administra.kforum2020.ui.notifications.NotificationsFragment"
+        android:name="com.administra.kforum2020.ui.menu.MenuFragment"
         android:label="Menu"
         tools:layout="@layout/fragment_menu" />
 </navigation>

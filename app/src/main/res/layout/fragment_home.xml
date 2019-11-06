@@ -17,17 +17,20 @@
             android:orientation="vertical">
 
 
-            <ImageSwitcher
-                android:id="@+id/imageSwitcher"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_launcher_background" />
-
 
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
+                android:id="@+id/imageViewPleca"
+                android:layout_width="match_parent"
+                android:layout_height="167dp"
+                android:layout_gravity="center"
+                android:background="@android:color/background_dark"
+                tools:layout_editor_absoluteY="173dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/imageViewQR"
+                android:layout_width="176dp"
+                android:layout_height="166dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="100dp"
                 android:background="@android:color/background_dark"
@@ -41,6 +44,16 @@
                 android:text="Name"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp" />
+
+            <ImageView
+                android:id="@+id/imageViewLogoAdministra"
+                android:layout_width="140dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:background="@android:color/background_dark"
+                tools:layout_editor_absoluteY="173dp"
+                tools:srcCompat="@tools:sample/avatars" />
 
 
         </LinearLayout>
