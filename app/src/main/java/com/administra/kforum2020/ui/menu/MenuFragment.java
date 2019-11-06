@@ -21,8 +21,11 @@ public class MenuFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         menuViewModel =
                 ViewModelProviders.of(this).get(MenuViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View root = inflater.inflate(R.layout.fragment_notifications2, container, false);
         //final TextView textView = root.findViewById(R.id.text_dashboard);
+
+
+
         menuViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {

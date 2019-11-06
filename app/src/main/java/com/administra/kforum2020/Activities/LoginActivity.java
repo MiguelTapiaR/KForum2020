@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
     public void loginHttp(){
         HashMap<String, Object> map = new HashMap<>();// Mapeo previo
 
-        map.put("id_customer", idCustomer);
+//        map.put("id_customer", idCustomer);
         JSONObject jsonObject = new JSONObject(map);
         String url = "https://www.themyt.com/conekta_web/InformacionPago.php";
 
@@ -74,14 +74,14 @@ public class LoginActivity extends AppCompatActivity {
 
                                     while( keys2.hasNext() ) {
 
-                                        String key2 = (String)keys2.next();
-                                        crearRadio( ((JSONObject) jsonObjectData.get(key2)).getString("last4").toString() , ((JSONObject) jsonObjectData.get(key2)).getString("default").toString()  ,((JSONObject) jsonObjectData.get(key2)).getString("brand").toString() );
-                                        hmTarjetas.put(Integer.valueOf( ((JSONObject) jsonObjectData.get(key2)).getString("last4").toString() ),  ((JSONObject) jsonObjectData.get(key2)).getString("id").toString() );
+//                                        String key2 = (String)keys2.next();
+//                                        crearRadio( ((JSONObject) jsonObjectData.get(key2)).getString("last4").toString() , ((JSONObject) jsonObjectData.get(key2)).getString("default").toString()  ,((JSONObject) jsonObjectData.get(key2)).getString("brand").toString() );
+//                                        hmTarjetas.put(Integer.valueOf( ((JSONObject) jsonObjectData.get(key2)).getString("last4").toString() ),  ((JSONObject) jsonObjectData.get(key2)).getString("id").toString() );
                                     }
                                 }
                             }
                             estado= response.getInt("estado");
-                            progressDialog.dismiss();
+                            //progressDialog.dismiss();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -91,8 +91,8 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                progressDialog.dismiss();
-                toastPersonalizado.crearToast("Error de conexión, revisa tu conexión a internet e intenta nuevamente", null);
+                /*progressDialog.dismiss();
+                toastPersonalizado.crearToast("Error de conexión, revisa tu conexión a internet e intenta nuevamente", null);*/
             }
         }) {
 

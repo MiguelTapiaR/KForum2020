@@ -1,4 +1,4 @@
-package com.administra.kforum2020.ui.notifications;
+package com.administra.kforum2020.ui.speakers;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,15 +14,15 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.administra.kforum2020.R;
 
-public class NotificationsFragment extends Fragment {
+public class SpeakersFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private SpeakersViewModel notificationsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
+                ViewModelProviders.of(this).get(SpeakersViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_speakers, container, false);
         final TextView textView = root.findViewById(R.id.text_notifications);
         notificationsViewModel.getText().observe(this, new Observer<String>() {
             @Override

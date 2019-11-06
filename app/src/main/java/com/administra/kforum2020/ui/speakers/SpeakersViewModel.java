@@ -1,14 +1,14 @@
-package com.administra.kforum2020.ui.notifications;
+package com.administra.kforum2020.ui.speakers;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class SpeakersViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public SpeakersViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is notifications fragment");
     }
