@@ -34,7 +34,7 @@ public class PerfilAdapter extends ArrayAdapter {
         /*ImageView imagen = (ImageView) item.findViewById(R.id.imagen_s);
         Picasso.get().load(datos.get(position).getImagenSpeaker()).into(imagen);*/
         //Nombre
-        TextView nombreSpeaker = (TextView) item.findViewById(R.id.titulo_descarga);
+        TextView nombreSpeaker = (TextView) item.findViewById(R.id.titulo_perfil);
         nombreSpeaker.setText(datos.get(position).encabezado);
         //Conferencia
         TextView tituloSP = (TextView) item.findViewById(R.id.valor_perfil);

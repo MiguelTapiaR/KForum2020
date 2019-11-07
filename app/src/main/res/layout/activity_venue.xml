@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ScrollView
         android:layout_width="match_parent"
@@ -10,11 +12,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/hilton"
-        />
+            <ImageView
+                android:id="@+id/imageViewPleca"
+                android:layout_width="match_parent"
+                android:layout_height="167dp"
+                android:layout_gravity="center"
+                android:background="@drawable/hilton"
+                tools:layout_editor_absoluteY="173dp"
+                tools:srcCompat="@tools:sample/avatars" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
