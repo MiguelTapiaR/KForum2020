@@ -30,17 +30,26 @@ public class SpeakerAdapter extends ArrayAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View item = inflater.inflate(R.layout.renglon_speaker, null);
+        View item;
+        if(datos.get(position).getHeader()){
+             item = inflater.inflate(R.layout.renglon_header, null);
+             TextView textView = item.findViewById(R.id.titulo_header);
+             textView.setText(datos.get(position).getNombre());
 
-        //Imagen
-        ImageView imagen = (ImageView) item.findViewById(R.id.imagen_speaker);
-        Picasso.get().load(datos.get(position).getImagenSpeaker()).into(imagen);
-        //Nombre
-        TextView nombreSpeaker = (TextView) item.findViewById(R.id.nombre_speaker);
-        nombreSpeaker.setText(datos.get(position).getNombre());
-        //Conferencia
-        TextView tituloSP = (TextView) item.findViewById(R.id.titulo_sp);
-        tituloSP.setText(datos.get(position).getTitulo());
+        }else{
+             item = inflater.inflate(R.layout.renglon_speaker, null);
+
+            //Imagen
+            ImageView imagen = (ImageView) item.findViewById(R.id.imagen_speaker);
+            Picasso.get().load(datos.get(position).getImagenSpeaker()).into(imagen);
+            //Nombre
+            TextView nombreSpeaker = (TextView) item.findViewById(R.id.nombre_speaker);
+            nombreSpeaker.setText(datos.get(position).getNombre());
+            //Conferencia
+            TextView tituloSP = (TextView) item.findViewById(R.id.titulo_sp);
+            tituloSP.setText(datos.get(position).getTitulo());
+        }
+
 
 
         return item;

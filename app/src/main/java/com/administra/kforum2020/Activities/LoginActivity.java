@@ -1,12 +1,17 @@
 package com.administra.kforum2020.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.administra.kforum2020.MainActivity;
 import com.administra.kforum2020.Model.MySingleton;
 import com.administra.kforum2020.R;
 import com.android.volley.AuthFailureError;
@@ -17,6 +22,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,7 +39,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
     EditText emailET, passwordET;
     Button loginBTN;
-
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,21 +49,59 @@ public class LoginActivity extends AppCompatActivity {
         passwordET = findViewById(R.id.password_login);
         loginBTN = findViewById(R.id.login_btn);
 
+        //reviso si hay user
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+
+            loginHttp(mAuth.getCurrentUser().getEmail(),"Kforum2020");
+
+        }
         loginBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if(emailET.getText().toString().isEmpty()&&passwordET.getText().toString().isEmpty()){
+                    Toast.makeText(LoginActivity.this, "Enter your email and password",
+                            Toast.LENGTH_SHORT).show();
+                }else {
+                    loginFB(emailET.getText().toString(),passwordET.getText().toString());
+                }
             }
         });
 
     }
 
-    public void loginHttp(){
-        HashMap<String, Object> map = new HashMap<>();// Mapeo previo
+    public void loginFB(final String email, final String password){
+        // [START sign_in_with_email]
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+//                            Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            loginHttp(email, password);
+                        } else {
+                            // If sign in fails, display a message to the user.
+//                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+//                            updateUI(null);
+                        }
 
-//        map.put("id_customer", idCustomer);
+
+                    }
+                });
+        // [END sign_in_with_email]
+
+    }
+    public void loginHttp(String email,String password){
+        HashMap<String, Object> map = new HashMap<>();// Mapeo previo
+        map.put("email", email);
+        map.put("password", password);
         JSONObject jsonObject = new JSONObject(map);
-        String url = "https://www.themyt.com/conekta_web/InformacionPago.php";
+        String url = "https://www.kforum2020.com/backend/apps/login_user.php";
 
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
                 url, jsonObject,
@@ -63,24 +111,14 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            Iterator<?> keys = response.keys();
 
-                            while( keys.hasNext() ) {
-                                String key = (String)keys.next();
-                                if ( response.get(key) instanceof JSONObject ) {
-                                    JSONObject jsonObjectData= new JSONObject (((JSONObject) response.get(key)).get("data").toString());
-
-                                    Iterator<?> keys2 = jsonObjectData.keys();
-
-                                    while( keys2.hasNext() ) {
-
-//                                        String key2 = (String)keys2.next();
-//                                        crearRadio( ((JSONObject) jsonObjectData.get(key2)).getString("last4").toString() , ((JSONObject) jsonObjectData.get(key2)).getString("default").toString()  ,((JSONObject) jsonObjectData.get(key2)).getString("brand").toString() );
-//                                        hmTarjetas.put(Integer.valueOf( ((JSONObject) jsonObjectData.get(key2)).getString("last4").toString() ),  ((JSONObject) jsonObjectData.get(key2)).getString("id").toString() );
-                                    }
-                                }
-                            }
                             estado= response.getInt("estado");
+                            String nombre= response.getString("nombre")+" "+response.getString("apellido");
+                            String id= response.getString("id");
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            intent.putExtra("nombre", nombre);
+                            intent.putExtra("id", id);
+                            startActivity(intent);
                             //progressDialog.dismiss();
                         } catch (JSONException e) {
                             e.printStackTrace();

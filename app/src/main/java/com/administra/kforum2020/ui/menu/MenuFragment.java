@@ -14,6 +14,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.administra.kforum2020.Activities.ContactUsActivity;
+import com.administra.kforum2020.Activities.HelpUsActivity;
+import com.administra.kforum2020.Activities.LoginActivity;
 import com.administra.kforum2020.Activities.LugarActivity;
 import com.administra.kforum2020.Activities.PerfilActivity;
 import com.administra.kforum2020.Adaptadores.MenuAdapter;
@@ -21,6 +24,7 @@ import com.administra.kforum2020.Adaptadores.NotificacionesAdapter;
 import com.administra.kforum2020.Model.Aviso;
 import com.administra.kforum2020.Model.Menu;
 import com.administra.kforum2020.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -46,13 +50,13 @@ public class MenuFragment extends Fragment {
         alInfo = new ArrayList();
 
         alInfo.add(new Menu("My profile", 1));
-        alInfo.add(new Menu("Q & A", 2));
-        alInfo.add(new Menu("Venue", 3));
-        alInfo.add(new Menu("Download content", 4));
-        alInfo.add(new Menu("Contact us", 5));
-        alInfo.add(new Menu("Help", 6));
-        alInfo.add(new Menu("Polls", 7));
-        alInfo.add(new Menu("Log out", 8));
+//        alInfo.add(new Menu("Q & A", 2));
+        alInfo.add(new Menu("Venue", 2));
+//        alInfo.add(new Menu("Download content", 4));
+        alInfo.add(new Menu("Contact us", 3));
+        alInfo.add(new Menu("Help", 4));
+//        alInfo.add(new Menu("Polls", 7));
+        alInfo.add(new Menu("Log out", 5));
         menuViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
@@ -70,38 +74,37 @@ public class MenuFragment extends Fragment {
 
                     case 1:
                         intent = new Intent(getContext(), PerfilActivity.class);
-
+                        startActivity(intent);
                         break;
                     case 2:
-                        intent = new Intent(getContext(), PerfilActivity.class);
-
+                        intent = new Intent(getContext(), LugarActivity.class);
+                        startActivity(intent);
                         break;
                     case 3:
-                        intent = new Intent(getContext(), LugarActivity.class);
+                        intent = new Intent(getContext(), ContactUsActivity.class);
+                        startActivity(intent);
                         break;
                     case 4:
-                        intent = new Intent(getContext(), PerfilActivity.class);
+                        intent = new Intent(getContext(), HelpUsActivity.class);
+                        startActivity(intent);
                         break;
                     case 5:
-                        intent = new Intent(getContext(), PerfilActivity.class);
+                        logout();
                         break;
-                    case 6:
-                        intent = new Intent(getContext(), PerfilActivity.class);
-                        break;
-                    case 7:
-                        intent = new Intent(getContext(), PerfilActivity.class);
-                        break;
-                    case 8:
-                        intent = new Intent(getContext(), PerfilActivity.class);
-                        break;
+
 
 
                 }
-                startActivity(intent);
+//
             }
         });
 
 
         return rootView;
+    }
+    public void logout(){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(getContext(), LoginActivity.class);
+        startActivity(intent);
     }
 }

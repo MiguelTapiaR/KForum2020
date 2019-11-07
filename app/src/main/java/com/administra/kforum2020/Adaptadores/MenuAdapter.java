@@ -36,29 +36,21 @@ public class MenuAdapter extends ArrayAdapter {
         ImageView imagen = (ImageView) item.findViewById(R.id.imagen_menu);
         switch (datos.get(position).id){
             case 1:
-                imagen.setImageResource(R.drawable.download_64);
+                imagen.setImageResource(R.drawable.profile_64);
                 break;
             case 2:
-                imagen.setImageResource(R.drawable.download_64);
+                imagen.setImageResource(R.drawable.venue_64);
                 break;
             case 3:
-                imagen.setImageResource(R.drawable.download_64);
+                imagen.setImageResource(R.drawable.contact_64);
                 break;
             case 4:
-                imagen.setImageResource(R.drawable.download_64);
+                imagen.setImageResource(R.drawable.help_64);
                 break;
             case 5:
-                imagen.setImageResource(R.drawable.download_64);
+                imagen.setImageResource(R.drawable.logout_24);
                 break;
-            case 6:
-                imagen.setImageResource(R.drawable.download_64);
-                break;
-            case 7:
-                imagen.setImageResource(R.drawable.download_64);
-                break;
-            case 8:
-                imagen.setImageResource(R.drawable.download_64);
-                break;
+
 
 
 

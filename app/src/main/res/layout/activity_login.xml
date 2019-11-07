@@ -11,18 +11,19 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <ImageView
+                android:src="@drawable/logokforum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/blanco"
                 android:text="E-mail"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginRight="80dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 />
             <EditText
                 android:id="@+id/email_login"
@@ -32,8 +33,9 @@
                 android:background="@color/blanco"
                 android:padding="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginRight="80dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:inputType="textEmailAddress"
                 />
             <TextView
                 android:layout_width="match_parent"
@@ -41,8 +43,8 @@
                 android:textColor="@color/blanco"
                 android:text="Password"
                 android:layout_marginTop="30dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginRight="80dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
 
                 />
             <EditText
@@ -52,9 +54,10 @@
                 android:hint="Password"
                 android:background="@color/blanco"
                 android:padding="10dp"
+                android:inputType="textPassword"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="80dp"
-                android:layout_marginRight="80dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 />
 
             <Button

@@ -21,38 +21,37 @@
             <ImageView
                 android:id="@+id/imageViewPleca"
                 android:layout_width="match_parent"
-                android:layout_height="167dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@android:color/background_dark"
-                tools:layout_editor_absoluteY="173dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageView
                 android:id="@+id/imageViewQR"
-                android:layout_width="176dp"
-                android:layout_height="166dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="100dp"
-                android:background="@android:color/background_dark"
-                tools:layout_editor_absoluteY="173dp"
+                android:layout_marginTop="60dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="159dp"
+                android:id="@+id/nombre_home"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_marginTop="15dp"
+                android:textSize="18dp"
                 android:text="Name" />
 
             <ImageView
-                android:id="@+id/imageViewLogoAdministra"
-                android:layout_width="140dp"
-                android:layout_height="42dp"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:src="@drawable/logo_admin_powered_app"
                 android:layout_marginTop="60dp"
-                android:background="@android:color/background_dark"
-                tools:layout_editor_absoluteY="173dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
 

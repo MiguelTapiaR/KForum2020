@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.administra.kforum2020.Model.Agenda;
 import com.administra.kforum2020.R;
@@ -28,14 +29,21 @@ public class AgendaAdapter  extends ArrayAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View item = inflater.inflate(R.layout.renglon_agenda, null);
+        View item;
+        if(datos.get(position).header){
+            item = inflater.inflate(R.layout.renglon_header, null);
+            TextView header = item.findViewById(R.id.titulo_header);
+            header.setText(datos.get(position).evento);
+        }else{
+            item = inflater.inflate(R.layout.renglon_agenda, null);
+            TextView hora=item.findViewById(R.id.hora_agenda);
+            TextView evento=item.findViewById(R.id.evento_agenda);
+            hora.setText(datos.get(position).hora);
+            evento.setText(datos.get(position).evento);
+        }
 
-        /*ImageView imagen = (ImageView) item.findViewById(R.id.imagen_patrocinador);
 
 
-
-        Picasso.get().load(datos.get(position).getUrlFoto()).into(imagen);
-*/
 
 
         return item;

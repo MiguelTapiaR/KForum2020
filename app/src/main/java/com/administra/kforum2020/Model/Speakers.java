@@ -4,6 +4,7 @@ public class Speakers {
 
     String nombre, titulo, id, imagenSpeaker, plecaSpeaker, biografia;
     int orden;
+    Boolean header;
 
     public Speakers(String nombre, String titulo, String id, String imagenSpeaker, String plecaSpeaker, String biografia, int orden) {
         this.nombre = nombre;
@@ -13,6 +14,15 @@ public class Speakers {
         this.plecaSpeaker = plecaSpeaker;
         this.biografia = biografia;
         this.orden = orden;
+        this.header = false;
+    }
+
+    public Boolean getHeader() {
+        return header;
+    }
+
+    public void setHeader(Boolean header) {
+        this.header = header;
     }
 
     public String getNombre() {
