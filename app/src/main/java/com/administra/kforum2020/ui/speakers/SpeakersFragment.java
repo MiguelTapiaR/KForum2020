@@ -1,10 +1,12 @@
 package com.administra.kforum2020.ui.speakers;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -14,8 +16,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.administra.kforum2020.Activities.VerSpeakerActivity;
 import com.administra.kforum2020.Adaptadores.SpeakerAdapter;
 import com.administra.kforum2020.Interfaces.IfFirebaseLoadDone;
+import com.administra.kforum2020.MainActivity;
 import com.administra.kforum2020.Model.Speakers;
 import com.administra.kforum2020.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -58,7 +62,7 @@ public class SpeakersFragment extends Fragment implements IfFirebaseLoadDone {
 
                         if (task.isSuccessful()) {
                             ArrayList<Speakers>al1= new ArrayList<>();
-                            Speakers header = new Speakers("Key note speakers","","","","","",0);
+                            Speakers header = new Speakers("Keynote speakers","","","","","",0);
                             header.setHeader(true);
                             al1.add(header);
                             ArrayList<Speakers>al2= new ArrayList<>();
@@ -66,7 +70,7 @@ public class SpeakersFragment extends Fragment implements IfFirebaseLoadDone {
                             header2.setHeader(true);
                             al2.add(header2);
                             ArrayList<Speakers>al3= new ArrayList<>();
-                            Speakers header3 = new Speakers("Speakers","","","","","",0);
+                            Speakers header3 = new Speakers("Panelists","","","","","",0);
                             header3.setHeader(true);
                             al3.add(header3);
 
@@ -78,7 +82,7 @@ public class SpeakersFragment extends Fragment implements IfFirebaseLoadDone {
                                             "",
                                             document.getString("imagen"),
                                             document.getString("plecaSpeaker"),
-                                            document.getString("bio"),
+                                            getResources().getString(R.string.b1),
                                             document.getLong("orden").intValue()));
                                 }else if(document.getLong("tipo").intValue()==2){
                                     al2.add(new Speakers(document.getString("nombre"),
@@ -86,7 +90,7 @@ public class SpeakersFragment extends Fragment implements IfFirebaseLoadDone {
                                             "",
                                             document.getString("imagen"),
                                             document.getString("plecaSpeaker"),
-                                            document.getString("bio"),
+                                            getResources().getString(R.string.b1),
                                             document.getLong("orden").intValue()
                                     ));
                                 }else if(document.getLong("tipo").intValue()==3){
@@ -95,7 +99,7 @@ public class SpeakersFragment extends Fragment implements IfFirebaseLoadDone {
                                             "",
                                             document.getString("imagen"),
                                             document.getString("plecaSpeaker"),
-                                            document.getString("bio"),
+                                            getResources().getString(R.string.b1),
                                             document.getLong("orden").intValue()
                                     ));
                                 }
@@ -115,6 +119,17 @@ public class SpeakersFragment extends Fragment implements IfFirebaseLoadDone {
                         }
                     }
                 });
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
+
+                Intent intent = new Intent(getContext(), VerSpeakerActivity.class);
+                intent.putExtra("speaker", alInfo.get(posicion) );
+
+                startActivity(intent);
+            }
+        });
         adapter = new SpeakerAdapter(rootView.getContext(), alInfo);
         lista.setAdapter(adapter);
         return rootView;

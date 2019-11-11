@@ -15,13 +15,16 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.administra.kforum2020.Activities.ContactUsActivity;
+import com.administra.kforum2020.Activities.FAQSActivity;
 import com.administra.kforum2020.Activities.HelpUsActivity;
 import com.administra.kforum2020.Activities.LoginActivity;
 import com.administra.kforum2020.Activities.LugarActivity;
 import com.administra.kforum2020.Activities.PerfilActivity;
+import com.administra.kforum2020.Activities.VenueDia2;
 import com.administra.kforum2020.Adaptadores.MenuAdapter;
 import com.administra.kforum2020.Adaptadores.NotificacionesAdapter;
 import com.administra.kforum2020.Model.Aviso;
+import com.administra.kforum2020.Model.FAQS;
 import com.administra.kforum2020.Model.Menu;
 import com.administra.kforum2020.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -52,9 +55,10 @@ public class MenuFragment extends Fragment {
         alInfo.add(new Menu("My profile", 1));
 //        alInfo.add(new Menu("Q & A", 2));
         alInfo.add(new Menu("Venue", 2));
+        alInfo.add(new Menu("Venue Day Two", 6));
 //        alInfo.add(new Menu("Download content", 4));
         alInfo.add(new Menu("Contact us", 3));
-        alInfo.add(new Menu("Help", 4));
+        alInfo.add(new Menu("FAQs", 4));
 //        alInfo.add(new Menu("Polls", 7));
         alInfo.add(new Menu("Log out", 5));
         menuViewModel.getText().observe(this, new Observer<String>() {
@@ -70,7 +74,7 @@ public class MenuFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
                 Intent intent = null;
-                switch (posicion+1) {
+                switch (alInfo.get(posicion).id) {
 
                     case 1:
                         intent = new Intent(getContext(), PerfilActivity.class);
@@ -80,12 +84,16 @@ public class MenuFragment extends Fragment {
                         intent = new Intent(getContext(), LugarActivity.class);
                         startActivity(intent);
                         break;
+                    case 6:
+                        intent = new Intent(getContext(), VenueDia2.class);
+                        startActivity(intent);
+                        break;
                     case 3:
                         intent = new Intent(getContext(), ContactUsActivity.class);
                         startActivity(intent);
                         break;
                     case 4:
-                        intent = new Intent(getContext(), HelpUsActivity.class);
+                        intent = new Intent(getContext(), FAQSActivity.class);
                         startActivity(intent);
                         break;
                     case 5:

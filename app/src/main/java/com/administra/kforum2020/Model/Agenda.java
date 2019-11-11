@@ -1,13 +1,17 @@
 package com.administra.kforum2020.Model;
 
-public class Agenda {
-    public String hora, evento;
-    public int id;
-    public Boolean header;
+import java.io.Serializable;
 
-    public Agenda(String hora, String evento) {
+public class Agenda implements Serializable {
+    public String hora, evento,id;
+    public Boolean header;
+    public int abrir;
+
+    public Agenda(String hora, String evento, String id,int abrir) {
         this.hora = hora;
         this.evento = evento;
         this.header = false;
+        this.id = id;
+        this.abrir = abrir;
     }
 }

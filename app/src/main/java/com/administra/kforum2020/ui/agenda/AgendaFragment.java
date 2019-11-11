@@ -1,10 +1,12 @@
 package com.administra.kforum2020.ui.agenda;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.Nullable;
@@ -13,6 +15,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.administra.kforum2020.Activities.DetalleAgendaActivity;
+import com.administra.kforum2020.Activities.VerSpeakerActivity;
 import com.administra.kforum2020.Adaptadores.AgendaAdapter;
 import com.administra.kforum2020.Adaptadores.SpeakerAdapter;
 import com.administra.kforum2020.Interfaces.IfFirebaseLoadDone;
@@ -46,7 +50,7 @@ public class AgendaFragment extends Fragment implements IfFirebaseLoadDone {
 
         //Lleno la informacion de base de datos
         alInfo = new ArrayList();
-//Init DB
+        //Init DB
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         db.collection(COLECCION).orderBy("orden")
@@ -57,24 +61,37 @@ public class AgendaFragment extends Fragment implements IfFirebaseLoadDone {
 
                         if (task.isSuccessful()) {
                             ArrayList<Agenda>al1= new ArrayList<>();
-                            Agenda header = new Agenda("Day 1 | November 14th","Day 1 | November 14th");
+                            Agenda header = new Agenda("Day 1 | November 14th","Day 1 | November 14th","",0);
                             header.header=true;
                             al1.add(header);
                             ArrayList<Agenda>al2= new ArrayList<>();
-                            Agenda header2 = new Agenda("Day 2 | November 15th","Day 2 | November 15th");
+                            Agenda header2 = new Agenda("Day 2 | November 15th","Day 2 | November 15th","",0);
                             header2.header=true;
                             al2.add(header2);
 
                             for (QueryDocumentSnapshot document : task.getResult()) {
 //                                Log.d("hola2", document.getId() + " => " + document.getData());
                                 if(document.getLong("dia").intValue()==1&&document.getLong("participante").intValue()==1){
-                                    al1.add(new Agenda(document.getString("hora"),
-                                            document.getString("evento")
-                                            ));
+                                    Agenda element = new Agenda(document.getString("hora"),
+                                            document.getString("evento"),
+                                            document.getId(),
+                                            0
+                                            );
+                                    if(document.getLong("abrir")!= null){
+                                        element.abrir = document.getLong("abrir").intValue();
+                                    }
+                                    al1.add(element);
                                 }else if(document.getLong("dia").intValue()==2&&document.getLong("participante").intValue()==1){
-                                    al2.add(new Agenda(document.getString("hora"),
-                                            document.getString("evento")
-                                    ));
+                                    Agenda element=new Agenda(document.getString("hora"),
+                                            document.getString("evento"),
+                                            document.getId(),
+                                            0
+
+                                    );
+                                    if(document.getLong("abrir")!= null){
+                                        element.abrir = document.getLong("abrir").intValue();
+                                    }
+                                    al2.add(element);
 
                                 }//else if
 
@@ -90,6 +107,19 @@ public class AgendaFragment extends Fragment implements IfFirebaseLoadDone {
                         }
                     }
                 });
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
+                if(alInfo.get(posicion).abrir==1){
+                    Intent intent = new Intent(getContext(), DetalleAgendaActivity.class);
+                    intent.putExtra("agenda", alInfo.get(posicion) );
+
+                    startActivity(intent);
+                }
+
+            }
+        });
         adapter = new AgendaAdapter(rootView.getContext(), alInfo);
         lista.setAdapter(adapter);
         return rootView;

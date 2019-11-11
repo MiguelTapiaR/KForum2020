@@ -1,6 +1,8 @@
 package com.administra.kforum2020.Model;
 
-public class Speakers {
+import java.io.Serializable;
+
+public class Speakers implements Serializable {
 
     String nombre, titulo, id, imagenSpeaker, plecaSpeaker, biografia;
     int orden;

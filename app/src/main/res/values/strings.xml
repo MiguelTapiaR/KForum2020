@@ -3,8 +3,33 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="texto_hotel">Hilton Mexico City Reforma offers a convenient downtown location, just footsteps from the historical downtown and the famous Reforma Ave.
+    <string name="b1">"hola\n salto de linea"</string>
+    <string name="texto_hotel">"Hilton Mexico City Reforma"</string>
+    <string name="texto_venue2">"Autódromo Hermanos Rodríguez"</string>
+    <string name="texto_direccion1">"Av. Juárez 70, Colonia Centro, Cuauhtémoc,06010 Mexico City, CDMX"</string>
+    <string name="texto_direccion2">"Av, Viad. Río de la Piedad S/N, Granjas México, 08400 Iztacalco, CDMX"</string>
+    <string name="p1">"Can I attend the meeting and activities of the K-Forum 2020 with my significant other?"</string>
+    <string name="r1">"We have prepared a special agenda of activities for your Significant Other that will run parallel to your attendance to the Forum. Please check the Significant Others tab on the agenda for details.\n\nSignificant Others are welcome to join us for the Cocktail/Dinner on November 14th and for the Luncheon on November 15th. "</string>
+    <string name="p2">"Is there a dress code for attendees?"</string>
+    <string name="r2">"Business Casual.\n\nOn November 14th, we recommend bringing a jacket to the Cocktail/ Dinner. \n\nOn November 15th, we recommend that attendees bring an extra pair of comfortable shoes for the morning activities."</string>
+    <string name="p3">"Is there a dress code for Significant Others?"</string>
+    <string name="r3">"Please consider Business Casual for the Cocktail/Dinner and for the Luncheon. \n\nOn November 14th, we recommend bringing a jacket to the Cocktail/ Dinner"</string>
+    <string name="p4">"After Completing the Registration Process, is my Hotel Reservation Confirmed?"</string>
+    <string name="r4">"Your reservation is confirmed if you marked the “Yes” checkbox in the “Do you require a hotel reservation” question in the registration form"</string>
+    <string name="p5">"At what time is the Check-In and the Check-Out at the Hotel?"</string>
+    <string name="r5">"Check-in: 15:00 hrs.\n\nCheck-out: 12:00 hrs.*\n\n*If you are departing on November 15th, you should do an early check-out at 7:00 am. If you are attending with your Significant Other, check-out will be extended until 13:00 hours. We’ll provide luggage storage during the event activities as needed."</string>
+    <string name="p6">"Do I have to Pay for my Hotel Stay?"</string>
+    <string name="r6">"Hotel expenses are covered for 3 nights (November 13th – November 15th).\n\nYou are welcome to arrive earlier or depart later. Additional nights are not included. We suggest you check with your company regarding the details or conditions for the payment of additional nights."</string>
+    <string name="p7">"What Services Does my Reservation Include?"</string>
+    <string name="r7">"Your reservation includes:\n\n• Accommodation\n\n• Breakfast\n\n• Wireless High Speed Internet Access\n\n• Fitness room\n\nMeals and Alcoholic beverages-only those provided during the official events. \n\nAdditional nights or services are not included."</string>
+    <string name="p8">"Will the Entire Event be at the Hotel?"</string>
+    <string name="r8">"For the Attendees:\n\nThe activities on November 14th will be held at the hotel, except for the Cocktail/Dinner at the end of the day. Transportation will be provided.\n\nThe activities on November 15th will be held in an alternative venue. Transportation will be provided.\n\nFor the Significant Others:\n\nThe activities will be outside the hotel, except for breakfast"</string>
+    <string name="p9">"Where will the Cocktail/Dinner Take Place?"</string>
+    <string name="r9">"Kaluz Museum\n\nAv. Hidalgo 85, Colonia Centro, Mexico City. Transportation will be provided"</string>
+    <string name="p10">"Where will the Luncheon Take Place?"</string>
+    <string name="r10">"The Luncheon will be at a private location. Transportation will be provided."</string>
+    <string name="p11">"Will There be Special Transportation for the Attendees?"</string>
+    <string name="r11">"Transportation from the Airport to the hotel and from the hotel to the Airport, will be managed by each attendee. We recommend to only use Airport-authorized taxicabs, Hotel-authorized taxicabs, or ride-share services such as Uber, Didi or Cabify.\n\nTransportation will be provided: (i) on November 14th from the hotel to the cocktail and back to the hotel; (ii) on November 15th for attendees at 7:30 am from the hotel to the K-Forum alternative venue; and (iii) from the alternative venue to the Luncheon. The hotel lobby will be our meeting point, please arrive on time.\n\nFor Significant Others, all the activities within their agenda include transportation. The meeting point will be the hotel lobby."</string>
 
-A top choice for business travelers, this hotel provides flexible meeting spaces, dining options and panoramic views all within steps of businesses and offices. Stay productive in a modern guest room with a large work desk, ergonomic chair and complimentary WiFi.</string>
 
 </resources>
