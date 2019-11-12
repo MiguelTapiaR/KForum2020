@@ -49,6 +49,7 @@ public class MenuAdapter extends ArrayAdapter {
                 break;
             case 5:
                 imagen.setImageResource(R.drawable.logout_24);
+                break;
             case 6:
                 imagen.setImageResource(R.drawable.venue_64);
                 break;

@@ -36,14 +36,14 @@ public class LugarActivity  extends AppCompatActivity {
         btnWaze.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/place/Aut%C3%B3dromo+Hermanos+Rodr%C3%ADguez/@19.4040417,-99.0895156,15z/data=!4m5!3m4!1s0x0:0x33ff6581b240a2dd!8m2!3d19.4040417!4d-99.0895156"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.waze.com/ul?ll=19.4349796%2C-99.1464219&navigate=yes&zoom=17"));
                 startActivity(browserIntent);
             }
         });
         btnUber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/place/Aut%C3%B3dromo+Hermanos+Rodr%C3%ADguez/@19.4040417,-99.0895156,15z/data=!4m5!3m4!1s0x0:0x33ff6581b240a2dd!8m2!3d19.4040417!4d-99.0895156"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://m.uber.com/ul/"));
                 startActivity(browserIntent);
             }
         });

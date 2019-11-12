@@ -2,6 +2,7 @@ package com.administra.kforum2020.ui.menu;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,15 +24,22 @@ import com.administra.kforum2020.Activities.PerfilActivity;
 import com.administra.kforum2020.Activities.VenueDia2;
 import com.administra.kforum2020.Adaptadores.MenuAdapter;
 import com.administra.kforum2020.Adaptadores.NotificacionesAdapter;
+import com.administra.kforum2020.Interfaces.IfFirebaseLoadDone;
 import com.administra.kforum2020.Model.Aviso;
 import com.administra.kforum2020.Model.FAQS;
 import com.administra.kforum2020.Model.Menu;
+import com.administra.kforum2020.Model.Speakers;
 import com.administra.kforum2020.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class MenuFragment extends Fragment {
+public class MenuFragment extends Fragment implements IfFirebaseLoadDone {
 
     private MenuViewModel menuViewModel;
     View rootView;
@@ -52,15 +60,57 @@ public class MenuFragment extends Fragment {
         //Lleno la informacion de base de datos
         alInfo = new ArrayList();
 
-        alInfo.add(new Menu("My profile", 1));
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
+
+        db.collection("menu")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+//                                Log.d("hola2", document.getId() + " => " + document.getData());
+                                if(document.getLong("activo").intValue()==1){
+                                    alInfo.add(new Menu("My profile", 1));
 //        alInfo.add(new Menu("Q & A", 2));
-        alInfo.add(new Menu("Venue", 2));
-        alInfo.add(new Menu("Venue Day Two", 6));
+                                    alInfo.add(new Menu("Venue", 2));
+                                    alInfo.add(new Menu("Venue Day Two", 6));
 //        alInfo.add(new Menu("Download content", 4));
-        alInfo.add(new Menu("Contact us", 3));
-        alInfo.add(new Menu("FAQs", 4));
+                                    alInfo.add(new Menu("Contact us", 3));
+                                    alInfo.add(new Menu("FAQs", 4));
 //        alInfo.add(new Menu("Polls", 7));
-        alInfo.add(new Menu("Log out", 5));
+                                    alInfo.add(new Menu("Log out", 5));
+                                }else if(document.getLong("activo").intValue()==0){
+
+
+                                    alInfo.add(new Menu("My profile", 1));
+//        alInfo.add(new Menu("Q & A", 2));
+                                    alInfo.add(new Menu("Venue", 2));
+//        alInfo.add(new Menu("Download content", 4));
+                                    alInfo.add(new Menu("Contact us", 3));
+                                    alInfo.add(new Menu("FAQs", 4));
+//        alInfo.add(new Menu("Polls", 7));
+                                    alInfo.add(new Menu("Log out", 5));
+                                }
+
+
+
+
+                            }
+
+
+
+                            onFirebaseLoadSuccess();
+                        } else {
+                            Log.w("ERROR", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+
+
         menuViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
@@ -114,5 +164,11 @@ public class MenuFragment extends Fragment {
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(getContext(), LoginActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onFirebaseLoadSuccess() {
+        adapter.notifyDataSetChanged();
+
     }
 }

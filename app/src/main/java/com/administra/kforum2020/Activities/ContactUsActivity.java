@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -65,6 +66,9 @@ public class ContactUsActivity  extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
 
+
+                            Toast.makeText(getApplicationContext(),"Email sent successfully", Toast.LENGTH_LONG).show();
+                            finish();
                             response.getString("estado");
                             //progressDialog.dismiss();
                         } catch (JSONException e) {

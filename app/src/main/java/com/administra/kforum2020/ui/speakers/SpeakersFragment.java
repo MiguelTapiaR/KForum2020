@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -36,7 +37,7 @@ public class SpeakersFragment extends Fragment implements IfFirebaseLoadDone {
     SpeakerAdapter adapter;
     ListView lista;
     static String COLECCION = "speakers";
-//    ViewGroup header;
+    RelativeLayout loading;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class SpeakersFragment extends Fragment implements IfFirebaseLoadDone {
         rootView = inflater.inflate(R.layout.fragment_speakers, container, false);
 
         lista = rootView.findViewById(R.id.lista_speakers);
-
+        loading = rootView.findViewById(R.id.loadingPanel);
 
 
         //Lleno la informacion de base de datos
@@ -82,7 +83,7 @@ public class SpeakersFragment extends Fragment implements IfFirebaseLoadDone {
                                             "",
                                             document.getString("imagen"),
                                             document.getString("plecaSpeaker"),
-                                            getResources().getString(R.string.b1),
+                                            getBio(document.getLong("orden").intValue()),
                                             document.getLong("orden").intValue()));
                                 }else if(document.getLong("tipo").intValue()==2){
                                     al2.add(new Speakers(document.getString("nombre"),
@@ -90,7 +91,7 @@ public class SpeakersFragment extends Fragment implements IfFirebaseLoadDone {
                                             "",
                                             document.getString("imagen"),
                                             document.getString("plecaSpeaker"),
-                                            getResources().getString(R.string.b1),
+                                            getBio(document.getLong("orden").intValue()),
                                             document.getLong("orden").intValue()
                                     ));
                                 }else if(document.getLong("tipo").intValue()==3){
@@ -99,7 +100,7 @@ public class SpeakersFragment extends Fragment implements IfFirebaseLoadDone {
                                             "",
                                             document.getString("imagen"),
                                             document.getString("plecaSpeaker"),
-                                            getResources().getString(R.string.b1),
+                                            getBio(document.getLong("orden").intValue()),
                                             document.getLong("orden").intValue()
                                     ));
                                 }
@@ -135,8 +136,78 @@ public class SpeakersFragment extends Fragment implements IfFirebaseLoadDone {
         return rootView;
     }
 
+    public String getBio(int orden){
+        String respuesta = "";
+        switch (orden){
+            case 1:
+                respuesta = getResources().getString(R.string.b1);
+                break;
+            case 2:
+                respuesta = getResources().getString(R.string.b2);
+                break;
+            case 3:
+                respuesta = getResources().getString(R.string.b3);
+                break;
+            case 4:
+                respuesta = getResources().getString(R.string.b4);
+                break;
+            case 5:
+                respuesta = getResources().getString(R.string.b5);
+                break;
+            case 6:
+                respuesta = getResources().getString(R.string.b6);
+                break;
+            case 7:
+                respuesta = getResources().getString(R.string.b7);
+                break;
+            case 8:
+                respuesta = getResources().getString(R.string.b8);
+                break;
+            case 9:
+                respuesta = getResources().getString(R.string.b9);
+                break;
+            case 10:
+                respuesta = getResources().getString(R.string.b10);
+                break;
+            case 11:
+                respuesta = getResources().getString(R.string.b11);
+                break;
+            case 12:
+                respuesta = getResources().getString(R.string.b12);
+                break;
+            case 13:
+                respuesta = getResources().getString(R.string.b13);
+                break;
+            case 14:
+                respuesta = getResources().getString(R.string.b14);
+                break;
+            case 15:
+                respuesta = getResources().getString(R.string.b15);
+                break;
+            case 16:
+                respuesta = getResources().getString(R.string.b16);
+                break;
+            case 17:
+                respuesta = getResources().getString(R.string.b17);
+                break;
+            case 18:
+                respuesta = getResources().getString(R.string.b18);
+                break;
+            case 19:
+                respuesta = getResources().getString(R.string.b19);
+                break;
+            case 20:
+                respuesta = getResources().getString(R.string.b20);
+                break;
+
+        }
+        return respuesta;
+    }
+
     @Override
     public void onFirebaseLoadSuccess() {
+
+        loading.setVisibility(View.GONE);
         adapter.notifyDataSetChanged();
     }
 }

@@ -1,6 +1,8 @@
 package com.administra.kforum2020.Model;
 
-public class FAQS {
+import java.io.Serializable;
+
+public class FAQS implements Serializable {
 
     public String pregunta,respuesta;
 
