@@ -16,17 +16,27 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                ads:adSize="LARGE_BANNER"
+                ads:adUnitId="@string/clave_xml">
+            </com.google.android.gms.ads.AdView>
 
             <ImageView
                 android:id="@+id/imageViewPleca"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@android:color/background_dark"
+                android:background="@color/blanco"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageView
+                android:visibility="gone"
                 android:id="@+id/imageViewQR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,6 +45,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/nombre_home"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -45,6 +56,7 @@
                 android:text="Name" />
 
             <ImageView
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -52,7 +64,16 @@
                 android:layout_marginTop="60dp"
                 android:layout_marginBottom="50dp"/>
 
-
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                ads:adSize="MEDIUM_RECTANGLE"
+                ads:adUnitId="@string/clave_xml">
+            </com.google.android.gms.ads.AdView>
         </LinearLayout>
     </ScrollView>
 </androidx.appcompat.widget.LinearLayoutCompat>

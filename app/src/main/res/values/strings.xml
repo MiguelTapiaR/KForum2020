@@ -1,8 +1,15 @@
 <resources>
-    <string name="app_name">K-Forum2020</string>
+    <string name="app_name">Feria del Caballo</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="pri_seccion">Inicio</string>
+    <string name="seg_seccion">Palenque</string>
+    <string name="ter_seccion">Teatro</string>
+    <string name="cua_seccion">Toros</string>
+    <string name="qui_seccion">Info</string>
+
+    <string name="clave_xml">ca-app-pub-3940256099942544/6300978111</string>
 
     <string name="texto_hotel">"Hilton Mexico City Reforma"</string>
     <string name="texto_venue2">"Autódromo Hermanos Rodríguez"</string>
@@ -51,6 +58,7 @@
     <string name="b18">"Daniel Martínez-Valle is CEO of Orbia. He assumed this role in 2018, after serving as CEO of Orbia’s holding company, Kaluz. Prior to Kaluz, Daniel was Cisco’s Director of Worldwide Strategy and Planning.\n\nHe previously was managing partner at Nebli Capital Advisors, founder and CEO of Aquanima, and a founding partner of BBF Ventures. He also was a consultant at McKinsey  and  Co. and served as Ministry of Finance Chief of Staff in Mexico."</string>
     <string name="b19">"Alberto Paracchini has served as President, Chief Executive Officer and director of Byline Bancorp and Byline Bank since June 2013. Prior to joining Byline, Alberto served as Principal for BXM Holdings, Inc., an investment fund specializing in community bank investments. From 2006 through 2008, Alberto served as President and Chief Financial Officer of Popular Financial Holdings and Chief Financial Officer of E-Loan, an internet banking and mortgage company.\n\nPrior to 2006, Alberto spent 13 years at Banco Popular North America, where he held several senior leadership roles including Chief Financial Officer, Treasurer and the head of all operations and technology functions. Alberto is a member of the Cook County Council of Economic Advisors and Economic Club of Chicago. Alberto holds a bachelor’s degree from Marquette University and an M.B.A. from the University of Chicago Booth School of Business."</string>
     <string name="b20">"Fernando Ruiz Jacques is Elementia’s CEO since March of 2015. Elementia is a major manufacturer of semi-finished copper, alloy, fiber cement, cement, and plastic products offering innovative constructive solutions that redefine the concept of constructive evolution.\n\nElementia has grown organically, and through strategic mergers and acquisitions, creating an integrated platform of more than 4,000 products, 36 plants in eight countries, about 6,450 employees and 5,800 distributors.\n\nPrior to his appointment as CEO, Fernando served as General Director of Building Systems Business Unit, recognized by brands such as Mexalit, Eureka, Plycem, Allura, Maxitile, Comecop and Frigocel, among others.\n\nDuring his management, Elementia launched its IPO, raising more than $250 million. These resources were used to expand Elementia’s cement capacity. Fernando oversaw the project, design and construction of the first Cementos Fortaleza plant, the new cement plant with which Elementia entered the cement sector in Mexico in 2012.\n\nThroughout his professional life, Fernando has held various management positions in widely recognized companies such as Umbral Capital and Wal-Mart de México.\n\nFernando has over 20 years of experience in the construction industry. He is a civil engineer by the Universidad Iberoamericana. In addition, he holds an MBA by UC Berkeley and a Master Degree in Finance by the Universidad Anáhuac in Mexico City.\n\nFernando is married to Elena Tamés and has three daughters. He enjoys boxing, yoga and spending time with his family."</string>
+    <string name="b21">Grew up in Emerson, NJ.All-American in Track and FieldAll-State in FootballAttended Stanford University on an athletic scholarship.Undergrad in Economics.Masters in Sociology.Began his racing Career in 1991.Currently the Director of Human Performance for Hendrick MotorsportsHas worked with Pit Crews at Hendrick Motorsports since 1992.NASCAR’s first pit coach.  Methods used by Andy transformed the series and are utilized by teams today.Part of Jeff Gordon’s “Rainbow Warriors” through the 90’s.The team had many record setting performances including four championships.A part of Hendrick Motorsport’s thirteen Sprint Cup, Nationwide and Truck championships.Personnel Director for Hendrick Motorsports from 2000 – 2005.Involved in HR, contracts, bonus programs, safety and compliance, driver development.Executive Director of the North Carolina Motorsports Association 2006-2012.Currently sits on the Board of Directors.Now speaks on behalf of the industry in areas such as public policy, workforce development and Industry trends.</string>
 
 
 </resources>

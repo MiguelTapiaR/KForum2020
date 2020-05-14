@@ -1,50 +1,35 @@
 {
   "project_info": {
-    "project_number": "962336425254",
-    "firebase_url": "https://kforum2020.firebaseio.com",
-    "project_id": "kforum2020",
-    "storage_bucket": "kforum2020.appspot.com"
+    "project_number": "344469773886",
+    "firebase_url": "https://feriacaballo-33280.firebaseio.com",
+    "project_id": "feriacaballo-33280",
+    "storage_bucket": "feriacaballo-33280.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:962336425254:android:7d331b5bd3b6298a1d2de7",
+        "mobilesdk_app_id": "1:344469773886:android:75880d8ba0852dd29b7b6f",
         "android_client_info": {
-          "package_name": "com.administra.kforum2020"
+          "package_name": "com.myt.feriaCaballo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "962336425254-s328f0sb2mgm0eje09tihdqsnosk4ndp.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.administra.kforum2020",
-            "certificate_hash": "fc59fe50bf6da2d7e7ed2d8e7f1129dc1c94c76c"
-          }
-        },
-        {
-          "client_id": "962336425254-8lr2cvpt4oehotvfboc6545158bgvc65.apps.googleusercontent.com",
+          "client_id": "344469773886-sa6ov9uhevekfbkrmaahi1qei8n5ibkd.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAJBFyD4yH7MlZZwhmy1rljrVypIBDlgSI"
+          "current_key": "AIzaSyBZqC1BCY1ZI5rSXjAMzoYlWVfAtb-LDuY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "962336425254-8lr2cvpt4oehotvfboc6545158bgvc65.apps.googleusercontent.com",
+              "client_id": "344469773886-sa6ov9uhevekfbkrmaahi1qei8n5ibkd.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "962336425254-14f60d0c2m14kf4g94ljjrvgivod83uo.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.administra.kforum2020"
-              }
             }
           ]
         }

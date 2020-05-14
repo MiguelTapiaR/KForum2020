@@ -7,31 +7,31 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.administra.kforum2020.ui.home.HomeFragment"
+        android:name="com.administra.feriaCaballo.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.administra.kforum2020.ui.agenda.AgendaFragment"
+        android:name="com.administra.feriaCaballo.ui.agenda.AgendaFragment"
         android:label="Agenda"
         tools:layout="@layout/fragment_agenda" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.administra.kforum2020.ui.speakers.SpeakersFragment"
+        android:name="com.administra.feriaCaballo.ui.speakers.SpeakersFragment"
         android:label="Speakers"
         tools:layout="@layout/fragment_speakers" />
 
     <fragment
         android:id="@+id/navigation_notifications2"
-        android:name="com.administra.kforum2020.ui.ui.notificaciones.NotificacionesFragment"
+        android:name="com.administra.feriaCaballo.ui.ui.notificaciones.NotificacionesFragment"
         android:label="Notifications"
         tools:layout="@layout/fragment_notifications2" />
 
     <fragment
         android:id="@+id/navigation_menu"
-        android:name="com.administra.kforum2020.ui.menu.MenuFragment"
+        android:name="com.administra.feriaCaballo.ui.menu.MenuFragment"
         android:label="Menu"
         tools:layout="@layout/fragment_menu" />
 </navigation>
